@@ -1,7 +1,7 @@
 # CARLA Simulator
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/54184905/107882164-df2ac900-6ef8-11eb-9787-86ab820f17de.png" />
+  <img src="https://user-images.githubusercontent.com/54184905/107882265-5f512e80-6ef9-11eb-8c12-9b44579a69cc.jpg" />
 </p>
 
 CARLA, açık kaynaklı bir otonom sürüş simülatörüdür. Otonom sürüş problemiyle ilgili bir dizi görevi ele almak için modüler ve esnek bir API olarak hizmet vermek 
