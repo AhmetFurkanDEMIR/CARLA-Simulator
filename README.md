@@ -1,4 +1,3 @@
-# CARLA Simulator
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/54184905/107882265-5f512e80-6ef9-11eb-8c12-9b44579a69cc.jpg" />
