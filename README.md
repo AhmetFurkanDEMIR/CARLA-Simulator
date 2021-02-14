@@ -46,5 +46,12 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 ## Building CARLA » Linux build
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54184905/107883217-b1e11980-6efe-11eb-8742-b3f792d8e602.png" />
+</p>
+
+**Ubuntu Kurulumu için ilerleyiniz** [https://ubuntu.com/download](https://ubuntu.com/download)
+
 **Carla Ubuntu kurulumu için ilerleyiniz** [https://carla.readthedocs.io/en/latest/build_linux/](https://carla.readthedocs.io/en/latest/build_linux/)
 
+**Cuda geliştirici kiti Ubuntu kurulumu için ilerleyiniz** [https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
