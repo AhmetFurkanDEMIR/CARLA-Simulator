@@ -1,2 +1,2 @@
-# CARLA-simulator
+# CARLA Simulator
 CARLA simulator
