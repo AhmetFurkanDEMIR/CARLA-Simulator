@@ -45,3 +45,27 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 
 ## Building CARLA » Linux build
+
+** Carla için gerekli kurulumlar**
+
+CARLA'nın çalışması için birçok bağımlılığa ihtiyaç vardır. Boost.Python gibi bazıları bu işlem sırasında otomatik olarak oluşturulur. Diğerleri, derlemeye 
+başlamadan önce yüklenmesi gereken ikili dosyalardır (cmake, clang, Python'un farklı sürümleri ve çok daha fazlası). Bunu yapmak için aşağıdaki komutları bir 
+terminal penceresinde çalıştırın.
+
+```linux
+sudo apt-get update &&
+sudo apt-get install wget software-properties-common &&
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test &&
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - &&
+sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-8 main" &&
+sudo apt-get update
+```
+
+```linux
+sudo apt-get install build-essential clang-8 lld-8 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&
+pip2 install --user setuptools &&
+pip3 install --user -Iv setuptools==47.3.1 &&
+pip2 install --user distro &&
+pip3 install --user distro
+```
+
