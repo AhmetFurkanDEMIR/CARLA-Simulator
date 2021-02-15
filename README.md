@@ -58,9 +58,9 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 **Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://colab.research.google.com/github/MichaelBosello/carla-colab/blob/master/carla-simulator.ipynb#scrollTo=w4Ywwr43AGR9)
 
 
-## Adımlar
+## Adımlarımızın özeti
 
-### Dünya ve müşteri
+### Dünya ve istemci
 
 İstemci, kullanıcının simülasyonda bilgi veya değişiklik istemek için çalıştırdığı modüldür. Bir istemci bir IP ve belirli bir bağlantı noktası ile çalışır. 
 Sunucuyla terminal üzerinden iletişim kurar. Aynı anda çalışan birçok müşteri olabilir. Gelişmiş çok istemci yönetimi, CARLA ve senkronizasyonun tam olarak 
@@ -109,4 +109,8 @@ Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek 
     Engel detektörü.
     Radar.
     RSS.
- 
+
+
+## Adımlarımız
+
+### Dünya ve istemci
