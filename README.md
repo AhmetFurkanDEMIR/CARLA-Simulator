@@ -51,6 +51,8 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 **Ubuntu Kurulumu için ilerleyiniz** [https://ubuntu.com/download](https://ubuntu.com/download)
 
-**Carla Ubuntu kurulumu için ilerleyiniz** [https://carla.readthedocs.io/en/latest/build_linux/](https://carla.readthedocs.io/en/latest/build_linux/)
+**Carla Ubuntu kurulumu için ilerleyiniz** [link](https://carla.readthedocs.io/en/latest/build_linux/)
 
-**Cuda geliştirici kiti Ubuntu kurulumu için ilerleyiniz** [https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
+**Cuda geliştirici kiti Ubuntu kurulumu için ilerleyiniz** [link](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
+
+* **Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://colab.research.google.com/github/MichaelBosello/carla-colab/blob/master/carla-simulator.ipynb#scrollTo=w4Ywwr43AGR9)
