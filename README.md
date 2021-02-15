@@ -56,3 +56,57 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 **Cuda geliştirici kiti Ubuntu kurulumu için ilerleyiniz** [link](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
 
 **Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://colab.research.google.com/github/MichaelBosello/carla-colab/blob/master/carla-simulator.ipynb#scrollTo=w4Ywwr43AGR9)
+
+
+## Adımlar
+
+### Dünya ve müşteri
+
+İstemci, kullanıcının simülasyonda bilgi veya değişiklik istemek için çalıştırdığı modüldür. Bir istemci bir IP ve belirli bir bağlantı noktası ile çalışır. 
+Sunucuyla terminal üzerinden iletişim kurar. Aynı anda çalışan birçok müşteri olabilir. Gelişmiş çok istemci yönetimi, CARLA ve senkronizasyonun tam olarak 
+anlaşılmasını gerektirir.
+
+Dünya simülasyonu temsil eden bir nesnedir. Oyuncuları ortaya çıkarmak, havayı değiştirmek, dünyanın mevcut durumunu elde etmek vb. İçin ana yöntemleri içeren 
+soyut bir katman görevi görür. Simülasyon başına yalnızca bir dünya vardır. Harita değiştirildiğinde yok edilecek ve yenisiyle değiştirilecektir.
+
+### Aktörler ve planlar
+
+Bir aktör, simülasyonda rol oynayan her şeydir.
+
+    Araçlar.
+    Yürüyüşçüler.
+    Sensörler.
+    Seyirci.
+    Trafik işaretleri ve trafik ışıkları.
+
+Taslaklar, bir aktör yaratmak için gerekli olan önceden hazırlanmış aktör düzenleridir. Temel olarak, animasyonlara ve bir dizi özelliğe sahip modeller. Bu 
+özelliklerden bazıları kullanıcı tarafından özelleştirilebilir, bazıları özelleştirilmez. Mevcut tüm planları ve bunlarla ilgili bilgileri içeren bir Taslak 
+kitaplığı vardır.
+
+### Haritalar ve navigasyon
+
+Harita, simüle edilmiş dünyayı, çoğunlukla şehri temsil eden nesnedir. Mevcut sekiz harita var. Hepsi yolları açıklamak için OpenDRIVE 1.4 standardını kullanıyor.
+
+Yollar, şeritler ve kavşaklar, istemciden erişilmek üzere Python API tarafından yönetilir. Bunlar, araçlara bir navigasyon yolu sağlamak için ara nokta sınıfı ile 
+birlikte kullanılır.
+
+Trafik işaretlerine ve trafik ışıklarına, OpenDRIVE tanımları hakkında bilgi içeren carla.Landmark nesneleri olarak erişilebilir. Ek olarak, simülatör, OpenDRIVE 
+dosyasındaki bilgileri kullanarak çalışırken otomatik olarak durur, verim ve trafik ışığı nesneleri oluşturur. Bunların yola yerleştirilmiş sınırlayıcı kutuları 
+vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
+
+### Sensörler ve veriler
+
+Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri toplar. Verilerin nasıl yönetileceğini tanımlayan bir işlevi çağırırlar. Hangisine bağlı olarak, sensörler farklı tipte sensör verilerini alır.
+
+Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek çevrenin bilgilerini toplar. Mevcut sensörler, Taslak kitaplığındaki planlarına göre tanımlanır.
+
+    Kameralar (RGB, derinlik ve anlamsal bölümleme).
+    Çarpışma detektörü.
+    Gnss sensörü.
+    IMU sensörü.
+    Lidar raycast.
+    Şerit istilası dedektörü.
+    Engel detektörü.
+    Radar.
+    RSS.
+ 
