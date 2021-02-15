@@ -49,7 +49,7 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
   <img src="https://user-images.githubusercontent.com/54184905/107883217-b1e11980-6efe-11eb-8742-b3f792d8e602.png" />
 </p>
 
-**Ubuntu Kurulumu için ilerleyiniz** [https://ubuntu.com/download](https://ubuntu.com/download)
+**Ubuntu Kurulumu için ilerleyiniz** [Link](https://ubuntu.com/download)
 
 **Carla Ubuntu kurulumu için ilerleyiniz** [link](https://carla.readthedocs.io/en/latest/build_linux/)
 
