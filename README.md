@@ -58,9 +58,13 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 **Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://colab.research.google.com/github/MichaelBosello/carla-colab/blob/master/carla-simulator.ipynb#scrollTo=w4Ywwr43AGR9)
 
 
-## Adımlarımızın özeti
+## Adımlar
 
 ### Dünya ve istemci
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54184905/108078591-ebd92980-707e-11eb-987b-cf989541f2b8.gif" />
+</p>
 
 İstemci, kullanıcının simülasyonda bilgi veya değişiklik istemek için çalıştırdığı modüldür. Bir istemci bir IP ve belirli bir bağlantı noktası ile çalışır. 
 Sunucuyla terminal üzerinden iletişim kurar. Aynı anda çalışan birçok müşteri olabilir. Gelişmiş çok istemci yönetimi, CARLA ve senkronizasyonun tam olarak 
@@ -68,6 +72,28 @@ anlaşılmasını gerektirir.
 
 Dünya simülasyonu temsil eden bir nesnedir. Oyuncuları ortaya çıkarmak, havayı değiştirmek, dünyanın mevcut durumunu elde etmek vb. İçin ana yöntemleri içeren 
 soyut bir katman görevi görür. Simülasyon başına yalnızca bir dünya vardır. Harita değiştirildiğinde yok edilecek ve yenisiyle değiştirilecektir.
+
+```python
+# client oluşturma
+# localhost üzerinden 2000 portundan carla simulatore erişilir.
+client = carla.Client('localhost', 2000)
+```
+
+```python
+# İstemci oluşturulduktan sonra zaman aşımını ayarlayın. Bu, tüm ağ işlemlerini sınırlar, böylece bunlar istemciyi sonsuza kadar engellemez. Bağlantı başarısız olursa bir hata döndürülür.
+client.set_timeout(10.0) # seconds
+```
+
+```python
+# Dünya bağlantısı, world adlı degisken kullanılır.
+world = client.get_world()
+```
+
+```python
+# mevcut haritaları listeleyip, o haritayı yükleyebilirsiniz.
+print(client.get_available_maps())
+world = client.load_world('Town01')
+```
 
 ### Aktörler ve planlar
 
@@ -111,6 +137,3 @@ Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek 
     RSS.
 
 
-## Adımlarımız
-
-### Dünya ve istemci
