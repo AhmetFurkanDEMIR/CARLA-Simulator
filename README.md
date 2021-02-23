@@ -95,6 +95,27 @@ print(client.get_available_maps())
 world = client.load_world('Town01')
 ```
 
+Hava
+
+Hava durumu tek başına bir sınıf değil, dünyadan erişilebilen bir dizi parametredir. Parametrizasyon, güneş yönü, bulutluluk, rüzgar, sis ve çok daha fazlasını içerir. Carla.WeatherParameters yardımcı sınıfı, özel bir hava durumunu tanımlamak için kullanılır.
+
+```python
+weather = carla.WeatherParameters(
+    cloudiness=80.0,
+    precipitation=30.0,
+    sun_altitude_angle=70.0)
+
+world.set_weather(weather)
+
+print(world.get_weather())
+```
+
+Doğrudan dünyaya uygulanabilecek bazı hava durumu ön ayarları vardır. Bunlar carla.WeatherParameters içinde listelenir ve bir enum olarak erişilebilir.
+
+```python
+world.set_weather(carla.WeatherParameters.WetCloudySunset)
+```
+
 ### Aktörler ve planlar
 
 Bir aktör, simülasyonda rol oynayan her şeydir.
