@@ -60,6 +60,8 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 ## Adımlar
 
+Aşağıdaki adımlar ile Carla Simulator 'u daha detaylıca inceleyip öğrenecğiz :).
+
 ### Dünya ve istemci
 
 <p align="center">
@@ -115,6 +117,25 @@ Doğrudan dünyaya uygulanabilecek bazı hava durumu ön ayarları vardır. Bunl
 ```python
 world.set_weather(carla.WeatherParameters.WetCloudySunset)
 ```
+
+Hata ayıklama
+
+World nesneleri, genel bir öznitelik olarak carla.DebugHelper nesnesine sahiptir. Simülasyon sırasında farklı şekillerin çizilmesine izin verir. Bunlar meydana gelen olayları izlemek için kullanılır. Aşağıdaki örnek, bir oyuncunun konumuna ve dönüşüne kırmızı bir kutu çizer.
+
+```python
+debug = world.debug
+debug.draw_box(carla.BoundingBox(actor_snapshot.get_transform().location,carla.Vector3D(0.5,0.5,2)),actor_snapshot.get_transform().rotation, 0.05, carla.Color(255,0,0,0),0)
+```
+
+Dünya anlık görüntüleri
+
+Simülasyondaki her oyuncunun durumunu tek bir karede içerir. Bir zaman referansı ile dünyanın bir tür hareketsiz görüntüsü. Bilgi, asenkron modda bile aynı simülasyon adımından gelir.
+
+```python
+# Retrieve a snapshot of the world at current frame.
+world_snapshot = world.get_snapshot()
+```
+
 
 ### Aktörler ve planlar
 
