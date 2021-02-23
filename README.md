@@ -55,7 +55,7 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 **Cuda geliştirici kiti Ubuntu kurulumu için ilerleyiniz** [link](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation)
 
-**Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://colab.research.google.com/github/MichaelBosello/carla-colab/blob/master/carla-simulator.ipynb#scrollTo=w4Ywwr43AGR9)
+**Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://lnkd.in/dtzWR3S)
 
 
 ## Adımlar
