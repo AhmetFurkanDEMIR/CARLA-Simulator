@@ -72,7 +72,7 @@ Aşağıdaki adımlar ile Carla Simulator 'u daha detaylıca inceleyip öğrenec
 Sunucuyla terminal üzerinden iletişim kurar. Aynı anda çalışan birçok müşteri olabilir. Gelişmiş çok istemci yönetimi, CARLA ve senkronizasyonun tam olarak 
 anlaşılmasını gerektirir.
 
-Dünya simülasyonu temsil eden bir nesnedir. Oyuncuları ortaya çıkarmak, havayı değiştirmek, dünyanın mevcut durumunu elde etmek vb. İçin ana yöntemleri içeren 
+Dünya, simülasyonu temsil eden bir nesnedir. Oyuncuları ortaya çıkarmak, havayı değiştirmek, dünyanın mevcut durumunu elde etmek vb. İçin ana yöntemleri içeren 
 soyut bir katman görevi görür. Simülasyon başına yalnızca bir dünya vardır. Harita değiştirildiğinde yok edilecek ve yenisiyle değiştirilecektir.
 
 ```python
