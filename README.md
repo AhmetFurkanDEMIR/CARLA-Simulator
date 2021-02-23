@@ -62,6 +62,10 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 
 Aşağıdaki adımlar ile Carla Simulator 'u daha detaylıca inceleyip öğrenecğiz :).
 
+<p align="center">
+  <img src="https://carla.org/img/posts/2020-31-07/lidar_raycast.gif" />
+</p>
+
 ### Dünya ve istemci
 
 <p align="center">
