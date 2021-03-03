@@ -241,6 +241,10 @@ vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
 | Town07            | Dar yolları, neredeyse hiç olmayan trafik ışıkları ve ahırları olan kırsal bir ortam.        |
 | Town08            | Cadde veya gezinti yeri gibi farklı ortamlara ve daha gerçekçi dokulara sahip bir şehir ortamı.       |
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54184905/109822845-66da3c80-7c48-11eb-9924-7b9e68d382e4.png" />
+</p>
+
 ### Sensörler ve veriler
 
 Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri toplar. Verilerin nasıl yönetileceğini tanımlayan bir işlevi çağırırlar. Hangisine bağlı olarak, sensörler farklı tipte sensör verilerini alır.
