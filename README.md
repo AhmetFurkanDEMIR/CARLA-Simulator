@@ -230,7 +230,7 @@ vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
 
 **Varsayılan olarak gelene haritalar**
 
-|   Kasaba Özeti    |   Supports  |
+|   Kasaba Özeti    |   Özet  |
 | ------------------| ----------- |
 | Town01            | Tüm "T kavşakları" ile temel bir şehir düzeni.       |
 | Town02            | Town01'e benzer, ancak daha küçük.         |
