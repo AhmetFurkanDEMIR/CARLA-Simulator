@@ -216,6 +216,7 @@ spawn_point = carla.Transform()
 spawn_point.location = world.get_random_location_from_navigation()
 ```
 
+
 ### Haritalar ve navigasyon
 
 Harita, simüle edilmiş dünyayı, çoğunlukla şehri temsil eden nesnedir. Mevcut sekiz harita var. Hepsi yolları açıklamak için OpenDRIVE 1.4 standardını kullanıyor.
@@ -226,6 +227,19 @@ birlikte kullanılır.
 Trafik işaretlerine ve trafik ışıklarına, OpenDRIVE tanımları hakkında bilgi içeren carla.Landmark nesneleri olarak erişilebilir. Ek olarak, simülatör, OpenDRIVE 
 dosyasındaki bilgileri kullanarak çalışırken otomatik olarak durur, verim ve trafik ışığı nesneleri oluşturur. Bunların yola yerleştirilmiş sınırlayıcı kutuları 
 vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
+
+**Varsayılan olarak gelene haritalar**
+
+|   Kasaba Özeti    |   Supports  |
+| ------------------| ----------- |
+| Town01            | Tüm "T kavşakları" ile temel bir şehir düzeni.       |
+| Town02            | Town01'e benzer, ancak daha küçük.         |
+| Town03            | 5 şeritli bir kavşak, döner kavşak, düzensizlik, tünel ve çok daha fazlasıyla en karmaşık kasaba.       |
+| Town04            | Bir otoyol ve küçük bir kasaba ile sonsuz bir döngü.       |
+| Town05            | Kavşakları ve köprüsü olan kare şeklinde şehir. Yön başına birden fazla şeridi vardır. Şerit değişiklikleri yapmak için kullanışlıdır.        |
+| Town06            | Birçok otoyol girişi ve çıkışı olan uzun otoyollar. Aynı zamanda bir Michigan solu da var.        |
+| Town07            | Dar yolları, neredeyse hiç olmayan trafik ışıkları ve ahırları olan kırsal bir ortam.        |
+| Town08            | Cadde veya gezinti yeri gibi farklı ortamlara ve daha gerçekçi dokulara sahip bir şehir ortamı.       |
 
 ### Sensörler ve veriler
 
