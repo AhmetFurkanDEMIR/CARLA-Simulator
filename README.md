@@ -155,6 +155,67 @@ Taslaklar, bir aktör yaratmak için gerekli olan önceden hazırlanmış aktör
 özelliklerden bazıları kullanıcı tarafından özelleştirilebilir, bazıları özelleştirilmez. Mevcut tüm planları ve bunlarla ilgili bilgileri içeren bir Taslak 
 kitaplığı vardır.
 
+Carla.BlueprintLibrary sınıfı, carla.ActorBlueprint öğelerinin bir listesini içerir. Ona erişimi sağlayabilen dünya nesnesidir.
+
+```python
+blueprint_library = world.get_blueprint_library()
+```
+
+Taslakların onları tanımlamak için bir kimliği vardır ve aktörler onunla birlikte ortaya çıkar. Kitaplık, belirli bir kimliği bulmak, rastgele bir plan seçmek veya sonuçları bir joker karakter kalıbı kullanarak filtrelemek için okunabilir.
+
+```python
+# Belirli bir plan bulun.
+collision_sensor_bp = blueprint_library.find('sensor.other.collision')
+# Rastgele bir araç planı seçin.
+vehicle_bp = random.choice(blueprint_library.filter('vehicle.*.*'))
+```
+
+Bunun yanı sıra, her carla.ActorBlueprint, alınıp ayarlanabilen bir carla.ActorAttribute serisine sahiptir.
+
+
+```python
+is_bike = [vehicle.get_attribute('number_of_wheels') == 2]
+if(is_bike)
+    vehicle.set_attribute('color', '255,0,0')
+```
+
+Özniteliklerin carla.ActorAttributeType değişkeni vardır. Türünü bir numaralandırma listesinden belirtir. Ayrıca değiştirilebilir öznitelikler, önerilen değerlerin bir listesiyle birlikte gelir.
+
+```python
+for attr in blueprint:
+    if attr.is_modifiable:
+        blueprint.set_attribute(attr.id, random.choice(attr.recommended_values))
+```
+
+Spawning
+
+Dünya nesnesi, oyuncuları yetiştirmekten ve bunların takibinden sorumludur. Spawning yalnızca bir plan ve oyuncu için bir konum ve dönüş belirten bir carla.Transform gerektirir.
+
+Oyuncu yetiştirmek için dünyanın iki farklı yöntemi vardır.
+
+spawn_actor() Spawning başarısız olursa bir istisna yaratır.
+try_spawn_actor() Spawning başarısız olursa None döndürür.
+
+
+```python
+transform = Transform(Location(x=230, y=195, z=40), Rotation(yaw=180))
+actor = world.spawn_actor(blueprint, transform)
+```
+
+Oyuncu, belirtilen konumda çarpışma durumunda ortaya çıkmayacaktır. Bunun statik bir nesneyle veya başka bir oyuncuyla olması farketmez. Bu istenmeyen Spawning çarpışmalarından kaçınmayı denemek mümkündür.
+
+```python
+# araçlar için. Önerilen Spawning noktalarının bir listesini döndürür.
+spawn_points = world.get_map().get_spawn_points()
+```
+
+yürüyüşçüler için world.get_random_location (). Kaldırımda rastgele bir nokta verir. Aynı yöntem, yürüyüşçüler için bir hedef konumu belirlemek için kullanılır.
+
+```python
+spawn_point = carla.Transform()
+spawn_point.location = world.get_random_location_from_navigation()
+```
+
 ### Haritalar ve navigasyon
 
 Harita, simüle edilmiş dünyayı, çoğunlukla şehri temsil eden nesnedir. Mevcut sekiz harita var. Hepsi yolları açıklamak için OpenDRIVE 1.4 standardını kullanıyor.
