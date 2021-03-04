@@ -349,6 +349,7 @@ Eklendikleri nesne belirli bir olayı kaydettiğinde verileri alın. Tetiklendi�
 | Obstacle                | carla.ObstacleDetectionEvent     | Bilgilerinin etiketlerine göre belirli bir renkle işler. |
 
 
+
 **Diğer**
 
 Navigasyon, fiziksel özelliklerin ölçümü ve sahnenin 2D / 3D nokta haritaları gibi farklı işlevler.
