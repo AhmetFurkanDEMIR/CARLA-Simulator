@@ -58,15 +58,7 @@ sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek 
 **Carla Simulatoru Colab üzerinde çalıştırmak için ilerleyiniz** [link](https://lnkd.in/dtzWR3S)
 
 
-## Adımlar
-
-Aşağıdaki adımlar ile Carla Simulator 'u daha detaylıca inceleyip öğrenecğiz :).
-
-<p align="center">
-  <img src="https://carla.org/img/posts/2020-31-07/lidar_raycast.gif" />
-</p>
-
-### Dünya ve istemci
+## Dünya ve istemci
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/54184905/108078591-ebd92980-707e-11eb-987b-cf989541f2b8.gif" />
@@ -101,7 +93,7 @@ print(client.get_available_maps())
 world = client.load_world('Town01')
 ```
 
-Hava
+**Hava**
 
 Hava durumu tek başına bir sınıf değil, dünyadan erişilebilen bir dizi parametredir. Parametrizasyon, güneş yönü, bulutluluk, rüzgar, sis ve çok daha fazlasını içerir. Carla.WeatherParameters yardımcı sınıfı, özel bir hava durumunu tanımlamak için kullanılır.
 
@@ -122,7 +114,7 @@ Doğrudan dünyaya uygulanabilecek bazı hava durumu ön ayarları vardır. Bunl
 world.set_weather(carla.WeatherParameters.WetCloudySunset)
 ```
 
-Hata ayıklama
+**Hata ayıklama**
 
 World nesneleri, genel bir öznitelik olarak carla.DebugHelper nesnesine sahiptir. Simülasyon sırasında farklı şekillerin çizilmesine izin verir. Bunlar meydana gelen olayları izlemek için kullanılır. Aşağıdaki örnek, bir oyuncunun konumuna ve dönüşüne kırmızı bir kutu çizer.
 
@@ -131,7 +123,7 @@ debug = world.debug
 debug.draw_box(carla.BoundingBox(actor_snapshot.get_transform().location,carla.Vector3D(0.5,0.5,2)),actor_snapshot.get_transform().rotation, 0.05, carla.Color(255,0,0,0),0)
 ```
 
-Dünya anlık görüntüleri
+**Dünya anlık görüntüleri**
 
 Simülasyondaki her oyuncunun durumunu tek bir karede içerir. Bir zaman referansı ile dünyanın bir tür hareketsiz görüntüsü. Bilgi, asenkron modda bile aynı simülasyon adımından gelir.
 
@@ -141,7 +133,7 @@ world_snapshot = world.get_snapshot()
 ```
 
 
-### Aktörler ve planlar
+## Aktörler ve planlar
 
 Bir aktör, simülasyonda rol oynayan her şeydir.
 
@@ -187,7 +179,7 @@ for attr in blueprint:
         blueprint.set_attribute(attr.id, random.choice(attr.recommended_values))
 ```
 
-Spawning
+**Spawning**
 
 Dünya nesnesi, oyuncuları yetiştirmekten ve bunların takibinden sorumludur. Spawning yalnızca bir plan ve oyuncu için bir konum ve dönüş belirten bir carla.Transform gerektirir.
 
@@ -217,7 +209,7 @@ spawn_point.location = world.get_random_location_from_navigation()
 ```
 
 
-### Haritalar ve navigasyon
+## Haritalar ve navigasyon
 
 Harita, simüle edilmiş dünyayı, çoğunlukla şehri temsil eden nesnedir. Mevcut sekiz harita var. Hepsi yolları açıklamak için OpenDRIVE 1.4 standardını kullanıyor.
 
@@ -245,7 +237,7 @@ vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
   <img src="https://user-images.githubusercontent.com/54184905/109822845-66da3c80-7c48-11eb-9924-7b9e68d382e4.png" />
 </p>
 
-### Sensörler ve veriler
+## Sensörler ve veriler
 
 Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri toplar. Verilerin nasıl yönetileceğini tanımlayan bir fonksiyon çağırırlar. Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek çevrenin bilgilerini toplar. Mevcut sensörler, Taslak kitaplığındaki planlarına göre tanımlanır.
 
@@ -260,7 +252,7 @@ Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri
     RSS.
 
 
-Sensörler adım adım
+**Sensörler adım adım**
 
 Carla.Sensor sınıfı, verileri ölçebilen ve aktarabilen özel bir aktör türünü tanımlar.
 
@@ -268,11 +260,11 @@ Bu veriler nedir? Sensör tipine bağlı olarak çok değişir. Tüm veri türle
 
 Verileri ne zaman alırlar? Ya her simülasyon adımında ya da belirli bir olay kaydedildiğinde. Sensör tipine bağlıdır. Her sensörün verileri almak ve yönetmek için bir listen () yöntemi vardır.
 
-Ayarlar
+**Ayarlar**
 
-As with every other actor, find the blueprint and set specific attributes. This is essential when handling sensors. Their attributes will determine the results obtained. These are detailed in the sensors reference.
+Diğer tüm oyuncularda olduğu gibi, planı bulun ve belirli nitelikler belirleyin. Sensörleri kullanırken bu çok önemlidir. Nitelikleri, elde edilen sonuçları belirleyecektir. Bunlar sensör referansında ayrıntılı olarak açıklanmıştır.
 
-The following example sets a dashboard HD camera.
+Aşağıdaki örnek, bir kontrol paneli HD kamerasını ayarlar.
 
 
 ```python
@@ -288,7 +280,7 @@ blueprint.set_attribute('fov', '110')
 blueprint.set_attribute('sensor_tick', '0.2')
 ```
 
-Dinleme
+**Dinleme**
 
 Her sensörün bir listen () yöntemi vardır. Bu, sensör her veri aldığında çağrılır. Argüman geri çağrısı bir lambda işlevidir. Veriler alındığında sensörün ne yapması gerektiğini açıklar.
 
@@ -308,7 +300,7 @@ def callback(event):
 sensor02.listen(callback)
 ```
 
-Veri
+**Veri**
 
 Çoğu sensör veri nesnesinin, bilgileri diske kaydetme işlevi vardır. Bu, diğer ortamlarda kullanılmasına izin verecektir.
 
@@ -320,3 +312,4 @@ Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrınt
 | frame                     | int      | Ölçüm gerçekleştiğinde çerçeve numarası. |
 | timestamp                 | Double   | Bölümün başlangıcından bu yana simülasyon saniyelerinde ölçümün zaman damgası. |
 | transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | World reference of the sensor at the time of the measurement. |
+
