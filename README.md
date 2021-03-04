@@ -342,4 +342,8 @@ Semantic segmentation sensor
 
 Eklendikleri nesne belirli bir olayı kaydettiğinde verileri alın. Tetiklendiğinde verileri alın.
 
-
+|   Sensör   |    Çıktı   | Açıklama |
+| --------------------------|----------|----------|
+| Collision                     | carla.CollisionEvent       | Ebeveyni ve diğer oyuncular arasındaki çatışmaları alır. |
+| Lane invasion                 | carla.LaneInvasionEvent    | Ebeveyni bir şerit işaretini geçtiğinde kaydolur. |
+| Obstacle                | carla.ObstacleDetectionEvent     | Bilgilerinin etiketlerine göre belirli bir renkle işler. |
