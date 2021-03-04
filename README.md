@@ -326,6 +326,13 @@ Onların bakış açısından dünyanın bir fotoğrafını çekin. Yardımcı s
 | Semantic segmentation                 | [carla.Image](https://carla.readthedocs.io/en/latest/python_api/#carlaimage)       | Görünüm alanındaki öğeleri etiketlerine göre belirli bir renkle işler. |
 
 
+depth sensor
+![](https://user-images.githubusercontent.com/42531084/76295063-f1ff4b80-62ee-11ea-8b0d-959831291acf.png)
 
+RGB sensor
+![](https://miro.medium.com/max/600/1*-A5S5CybN1iRd7migU8T1Q.gif)
+
+Semantic segmentation sensor
+![](https://sagnibak.github.io/img/good_juxtaposed.png)
 
 
