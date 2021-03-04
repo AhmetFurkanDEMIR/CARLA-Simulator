@@ -247,9 +247,7 @@ vardır. Araçlar, sınır kutularına girdiklerinde onlardan haberdar olurlar.
 
 ### Sensörler ve veriler
 
-Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri toplar. Verilerin nasıl yönetileceğini tanımlayan bir işlevi çağırırlar. Hangisine bağlı olarak, sensörler farklı tipte sensör verilerini alır.
-
-Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek çevrenin bilgilerini toplar. Mevcut sensörler, Taslak kitaplığındaki planlarına göre tanımlanır.
+Sensörler bir olayın gerçekleşmesini bekler ve ardından simülasyondan veri toplar. Verilerin nasıl yönetileceğini tanımlayan bir fonksiyon çağırırlar. Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek çevrenin bilgilerini toplar. Mevcut sensörler, Taslak kitaplığındaki planlarına göre tanımlanır.
 
     Kameralar (RGB, derinlik ve anlamsal bölümleme).
     Çarpışma detektörü.
@@ -262,3 +260,63 @@ Sensör, bir ana araca bağlı bir aktördür. Etrafındaki aracı takip ederek 
     RSS.
 
 
+Sensörler adım adım
+
+Carla.Sensor sınıfı, verileri ölçebilen ve aktarabilen özel bir aktör türünü tanımlar.
+
+Bu veriler nedir? Sensör tipine bağlı olarak çok değişir. Tüm veri türleri genel carla.SensorData'dan miras alınır.
+
+Verileri ne zaman alırlar? Ya her simülasyon adımında ya da belirli bir olay kaydedildiğinde. Sensör tipine bağlıdır. Her sensörün verileri almak ve yönetmek için bir listen () yöntemi vardır.
+
+Ayarlar
+
+As with every other actor, find the blueprint and set specific attributes. This is essential when handling sensors. Their attributes will determine the results obtained. These are detailed in the sensors reference.
+
+The following example sets a dashboard HD camera.
+
+
+```python
+# Sensörün planını bulun.
+blueprint = world.get_blueprint_library().find('sensor.camera.rgb')
+
+# Görüntü çözünürlüğünü ve görüş alanını ayarlamak için planın niteliklerini değiştirin.
+blueprint.set_attribute('image_size_x', '1920')
+blueprint.set_attribute('image_size_y', '1080')
+blueprint.set_attribute('fov', '110')
+
+# Sensör yakalamaları arasındaki süreyi saniye cinsinden ayarlayın
+blueprint.set_attribute('sensor_tick', '0.2')
+```
+
+Dinleme
+
+Her sensörün bir listen () yöntemi vardır. Bu, sensör her veri aldığında çağrılır. Argüman geri çağrısı bir lambda işlevidir. Veriler alındığında sensörün ne yapması gerektiğini açıklar.
+
+
+```python
+# do_something(), kamera tarafından her yeni görüntü oluşturulduğunda çağrılacaktır.
+sensor.listen(lambda data: do_something(data))
+
+...
+
+# Bu çarpışma sensörü, her çarpışma algılandığında yazdıracaktır.
+def callback(event):
+    for actor_id in event:
+        vehicle = world_ref().get_actor(actor_id)
+        print('Vehicle too close: %s' % vehicle.type_id)
+
+sensor02.listen(callback)
+```
+
+Veri
+
+Çoğu sensör veri nesnesinin, bilgileri diske kaydetme işlevi vardır. Bu, diğer ortamlarda kullanılmasına izin verecektir.
+
+Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrıntılı bir açıklama almak için sensör referansına bir göz atın. Bununla birlikte, hepsi her zaman bazı temel bilgilerle etiketlenir.
+
+
+|   Sensör veri özelliği    |    Tip   | Açıklama |
+| --------------------------|----------|----------|
+| frame                     | int      | Ölçüm gerçekleştiğinde çerçeve numarası. |
+| timestamp                 | Double   | Bölümün başlangıcından bu yana simülasyon saniyelerinde ölçümün zaman damgası. |
+| transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | World reference of the sensor at the time of the measurement. |
