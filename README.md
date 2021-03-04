@@ -315,7 +315,7 @@ Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrınt
 
 * **Sensör türleri**
 
-Kameralar
+**Kameralar**
 
 Onların bakış açısından dünyanın bir fotoğrafını çekin. Yardımcı sınıf carla.ColorConverter, söz konusu görüntüyü farklı bilgileri temsil edecek şekilde değiştirecektir.
 
