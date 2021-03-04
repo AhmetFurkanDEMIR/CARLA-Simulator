@@ -347,3 +347,20 @@ Eklendikleri nesne belirli bir olayı kaydettiğinde verileri alın. Tetiklendi�
 | Collision                     | carla.CollisionEvent       | Ebeveyni ve diğer oyuncular arasındaki çatışmaları alır. |
 | Lane invasion                 | carla.LaneInvasionEvent    | Ebeveyni bir şerit işaretini geçtiğinde kaydolur. |
 | Obstacle                | carla.ObstacleDetectionEvent     | Bilgilerinin etiketlerine göre belirli bir renkle işler. |
+
+
+**Diğer**
+
+Navigasyon, fiziksel özelliklerin ölçümü ve sahnenin 2D / 3D nokta haritaları gibi farklı işlevler.
+
+
+|   Sensör   |    Çıktı   | Açıklama |
+| --------------------------|----------|----------|
+| GNSS                     | carla.GNSSMeasurement       | Sensörün coğrafi konumunu alır. |
+| IMU                 | carla.IMUMeasurement    | Bir ivmeölçer, bir jiroskop ve bir pusuladan oluşur. |
+| LIDAR                | carla.LidarMeasurement     | Dönen bir LIDAR. Çevreyi modellemek için her nokta için koordinatları ve yoğunluğu olan bir 4D nokta bulutu oluşturur. |
+| Radar                | carla.RadarMeasurement     | Görünürde 2B nokta harita modelleme öğeleri ve sensörle ilgili hareketleri. |
+| RSS                | carla.RssResponse    | Bir araca uygulanan denetleyiciyi güvenlik kontrollerine göre değiştirir. Bu sensör diğerlerinden farklı bir şekilde çalışır ve bunun için özel RSS dokümantasyonu vardır. |
+| Semantic LIDAR                | carla.SemanticLidarMeasurement     | Dönen bir LIDAR. Örnek ve anlamsal segmentasyonla ilgili ekstra bilgiler içeren bir 3B nokta bulutu oluşturur. |
+
+
