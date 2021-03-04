@@ -313,3 +313,19 @@ Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrınt
 | timestamp                 | Double   | Bölümün başlangıcından bu yana simülasyon saniyelerinde ölçümün zaman damgası. |
 | transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | World reference of the sensor at the time of the measurement. |
 
+* **Sensör türleri**
+
+Kameralar
+
+Onların bakış açısından dünyanın bir fotoğrafını çekin. Yardımcı sınıf carla.ColorConverter, söz konusu görüntüyü farklı bilgileri temsil edecek şekilde değiştirecektir.
+
+|   Sensör   |    Çıktı   | Açıklama |
+| --------------------------|----------|----------|
+| Depth                     | [carla.Image](https://carla.readthedocs.io/en/latest/python_api/#carlaimage)       | Gri ölçekli bir haritada görüş alanındaki öğelerin derinliğini işler. |
+| RGB                 | [carla.Image](https://carla.readthedocs.io/en/latest/python_api/#carlaimage)     | Çevrenin net görüşünü sağlar. Sahnenin normal bir fotoğrafına benziyor. |
+| Semantic segmentation                 | [carla.Image](https://carla.readthedocs.io/en/latest/python_api/#carlaimage)       | Görünüm alanındaki öğeleri etiketlerine göre belirli bir renkle işler. |
+
+
+
+
+
