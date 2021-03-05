@@ -171,14 +171,6 @@ if(is_bike)
     vehicle.set_attribute('color', '255,0,0')
 ```
 
-Özniteliklerin carla.ActorAttributeType değişkeni vardır. Türünü bir numaralandırma listesinden belirtir. Ayrıca değiştirilebilir öznitelikler, önerilen değerlerin bir listesiyle birlikte gelir.
-
-```python
-for attr in blueprint:
-    if attr.is_modifiable:
-        blueprint.set_attribute(attr.id, random.choice(attr.recommended_values))
-```
-
 **Spawning**
 
 Dünya nesnesi, oyuncuları yetiştirmekten ve bunların takibinden sorumludur. Spawning yalnızca bir plan ve oyuncu için bir konum ve dönüş belirten bir carla.Transform gerektirir.
