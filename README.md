@@ -390,7 +390,6 @@ Semantic LIDAR
 **Code**
 
 ```python
-
 #!/usr/bin/env python3
 
 # Copyright (c) 2017 Computer Vision Center (CVC) at the Universitat Autonoma de
@@ -546,11 +545,7 @@ def run_carla_client(args):
 def print_measurements(measurements):
     number_of_agents = len(measurements.non_player_agents)
     player_measurements = measurements.player_measurements
-    message = "Vehicle at ({pos_x:.1f}, {pos_y:.1f}), "
-    message += "{speed:.0f} km/h, "
-    message += "Collision: {{vehicles={col_cars:.0f}, pedestrians={col_ped:.0f}, other={col_other:.0f}}}, "
-    message += "{other_lane:.0f}% other lane, {offroad:.0f}% off-road, "
-    message += "({agents_num:d} non-player agents in the scene)"
+    message = ""
     message = message.format(
         pos_x=player_measurements.transform.location.x,
         pos_y=player_measurements.transform.location.y,
