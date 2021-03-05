@@ -303,7 +303,7 @@ Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrınt
 | --------------------------|----------|----------|
 | frame                     | int      | Ölçüm gerçekleştiğinde çerçeve numarası. |
 | timestamp                 | Double   | Bölümün başlangıcından bu yana simülasyon saniyelerinde ölçümün zaman damgası. |
-| transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | World reference of the sensor at the time of the measurement. |
+| transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | Ölçüm sırasında sensörün dünya referansı. |
 
 * **Sensör türleri**
 
