@@ -387,6 +387,28 @@ Semantic LIDAR
 
 ## Simulator 'e Python ile API olarak bağlanmak
 
+**Simulatoru server olarak ayağa kaldırma**
+
+Terminalden aşağıdaki kodu çalıştırınız, böylece Carla server olarak çalışacak ve dışardan bağlanma imkanı sunacak.
+
+```linux
+$ ./CarlaUE4.sh -carla-server
+```
+
+Diğer terminal çalışırken kapatmadan yeni bir terminal daha açınız, bu terminalde ise aşağıdaki kodu çalıştırınız.
+
+```linux
+$ export CARLA_SERVER=/mnt/EE6A1EE26A1EA6FD/Python/Carla/CarlaUE4.sh
+```
+
+son açtığınız terminalden aşağıdaki kodu çalıştırınız
+
+```linux
+$ python3 client_example.py --autopilot
+```
+
+Artık carla simulatore Python ile bağlandık, açtığımız simulator girdiğimiz argümana göre yani otonom olarak ilerleyecektir.
+
 **Code**
 
 ```python
