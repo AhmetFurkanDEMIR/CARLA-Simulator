@@ -292,19 +292,6 @@ def callback(event):
 sensor02.listen(callback)
 ```
 
-**Veri**
-
-Çoğu sensör veri nesnesinin, bilgileri diske kaydetme işlevi vardır. Bu, diğer ortamlarda kullanılmasına izin verecektir.
-
-Sensör verileri, sensör türleri arasında çok farklılık gösterir. Ayrıntılı bir açıklama almak için sensör referansına bir göz atın. Bununla birlikte, hepsi her zaman bazı temel bilgilerle etiketlenir.
-
-
-|   Sensör veri özelliği    |    Tip   | Açıklama |
-| --------------------------|----------|----------|
-| frame                     | int      | Ölçüm gerçekleştiğinde çerçeve numarası. |
-| timestamp                 | Double   | Bölümün başlangıcından bu yana simülasyon saniyelerinde ölçümün zaman damgası. |
-| transform                 | [carla.Transform](https://carla.readthedocs.io/en/latest/python_api/#carlatransform)       | Ölçüm sırasında sensörün dünya referansı. |
-
 * **Sensör türleri**
 
 **Kameralar**
