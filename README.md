@@ -342,9 +342,6 @@ Navigasyon, fiziksel özelliklerin ölçümü ve sahnenin 2D / 3D nokta haritala
 | RSS                | carla.RssResponse    | Bir araca uygulanan denetleyiciyi güvenlik kontrollerine göre değiştirir. Bu sensör diğerlerinden farklı bir şekilde çalışır ve bunun için özel RSS dokümantasyonu vardır. |
 | Semantic LIDAR                | carla.SemanticLidarMeasurement     | Dönen bir LIDAR. Örnek ve anlamsal segmentasyonla ilgili ekstra bilgiler içeren bir 3B nokta bulutu oluşturur. |
 
-GNSS
-
-![](https://i.ytimg.com/vi/AuNVWWdh72A/maxresdefault.jpg)
 
 Lidar
 
