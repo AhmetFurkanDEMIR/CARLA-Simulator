@@ -20,28 +20,6 @@ fazlası. Gerçekçi sonuçları hedeflediğinden, en uygun seçenek, özellikle
 istemci tarafı, sahnedeki aktörlerin mantığını kontrol eden ve dünya koşullarını belirleyen bir dizi müşteri modülünden oluşur. Bu, sunucu ve istemci arasında 
 aracılık eden ve yeni işlevler sağlamak için sürekli gelişen bir katman olan CARLA API'den (Python veya C ++) yararlanılarak elde edilir.
 
-CARLA'yı anlamak bundan çok daha fazlasıdır, çünkü içinde birçok farklı özellik ve öğe bir arada bulunur. CARLA'nın neler başarabileceğine dair bakış açısı kazanmak 
-için bunlardan bazıları aşağıda listelenmiştir.
-
-* **Trafik Müdürü** Öğrenme için kullanılanın yanı sıra araçların kontrolünü ele alan yerleşik bir sistem. Gerçekçi davranışlarla kentsel benzeri ortamları yeniden 
-yaratmak için CARLA tarafından sağlanan bir iletken görevi görür.
-
-* **Sensörler** Araçlar, çevreleriyle ilgili bilgileri vermek için onlara güveniyor. CARLA'da, araca takılan belirli bir tür aktördür ve aldıkları veriler, süreci 
-kolaylaştırmak için alınabilir ve saklanabilir. Şu anda proje, kameralardan radarlara, lidara ve çok daha fazlasına kadar bunların farklı türlerini 
-desteklemektedir.
-
-* **Recorder** Bu özellik, dünyadaki her oyuncu için bir simülasyonu adım adım yeniden canlandırmak için kullanılır. Dünyanın herhangi bir yerindeki zaman 
-çizelgesindeki herhangi bir ana erişim sağlayarak harika bir izleme aracıdır.
-
-* **ROS köprüsü ve Otomatik Yazılım uygulaması** Evrenselleştirme meselesi olarak, CARLA projesi düğümleri birbirine bağlar ve simülatörün diğer öğrenme 
-ortamlarına entegrasyonu için çalışır.
-
-* **Varlıkları aç** CARLA, hava koşullarını kontrol ederek kentsel ortamlar için farklı haritalar ve kullanılacak geniş bir aktör setine sahip bir plan kitaplığı 
-sağlar. Ancak, bu öğeler özelleştirilebilir ve basit yönergeler izlenerek yenileri oluşturulabilir.
-
-* **Senaryo koşucusu** CARLA, araçlar için öğrenme sürecini kolaylaştırmak amacıyla, farklı durumları açıklayan bir dizi rota sunar. Bunlar aynı zamanda herkesin 
-çözümlerini test etmesi ve liderlik tablosuna girmesi için CARLA mücadelesinin temelini oluşturdu.
-
 
 ## Building CARLA » Linux build
 
@@ -383,6 +361,8 @@ $ python3 client_example.py --autopilot
 ```
 
 Artık carla simulatore Python ile bağlandık, açtığımız simulator girdiğimiz argümana göre yani otonom olarak ilerleyecektir.
+
+[Video Link](https://user-images.githubusercontent.com/54184905/110232414-929e4080-7f2e-11eb-8545-13f373667a96.mp4)
 
 **Code**
 
